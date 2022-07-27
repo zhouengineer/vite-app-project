@@ -1,0 +1,46 @@
+// tab样式
+.cz-tabs {
+  display: flex;
+  height: 0.9rem;
+  background-color: #fff;
+  border-bottom: 1px solid #f0f0f0;
+
+  // tab子项
+  & > .cz-tab-item {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+
+    // 子项内容box
+    & > .cz-tab-pane {
+      height: 0.9rem;
+      line-height: 0.9rem;
+      font-family: PingFangSC-Regular, "PingFang SC";
+      font-size: 0.3rem;
+      font-weight: 400;
+      color: rgba(92, 47, 7, 0.6);
+
+      &.cz-tab-active {
+        position: relative;
+        top: -0.01rem;
+        font-family: PingFangSC-Medium, "PingFang SC";
+        font-weight: 700;
+        color: #5c2f07;
+
+        &::after {
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          z-index: 1;
+          display: block;
+          width: 0.6rem;
+          height: 0.04rem;
+          content: "";
+          background-color: #e64e52;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+}

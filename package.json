@@ -1,0 +1,127 @@
+{
+  "name": "admin-app",
+  "version": "0.0.0",
+  "author": "caizhi",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "gen:env": "node ./genLocalEnv.ts",
+    "start": "vite --mode development",
+    "start:dev": "vite --mode dev",
+    "start:test": "vite --mode test",
+    "start:test2": "vite --mode test2",
+    "start:test3": "vite --mode test3",
+    "start:uat": "vite --mode uat",
+    "start:prod": "vite --mode prod",
+    "start:wx": "cross-env WX_JS_SDK_ENABLED=true vite --mode development --open wx",
+    "start:dev:wx": "cross-env WX_JS_SDK_ENABLED=true vite --mode dev --open wx",
+    "start:test:wx": "cross-env WX_JS_SDK_ENABLED=true vite --mode test --open wx",
+    "start:test2:wx": "cross-env WX_JS_SDK_ENABLED=true vite --mode test2 --open wx",
+    "start:test3:wx": "cross-env WX_JS_SDK_ENABLED=true vite --mode test3 --open wx",
+    "start:uat:wx": "cross-env WX_JS_SDK_ENABLED=true vite --mode uat --open wx",
+    "start:prod:wx": "cross-env WX_JS_SDK_ENABLED=true vite --mode prod --open wx",
+    "build": "tsc && vite build --mode production",
+    "build:dev": "tsc && vite build --mode dev",
+    "build:test": "tsc && vite build --mode test",
+    "build:test2": "tsc && vite build --mode test2",
+    "build:test3": "tsc && vite build --mode test3",
+    "build:uat": "tsc && vite build --mode uat",
+    "build:prod": "tsc && vite build --mode prod",
+    "serve": "vite preview",
+    "format:check": "prettier --check ./src/**/*.{js,jsx,ts,tsx}",
+    "format:write": "prettier --write ./src/**/*.{js,jsx,ts,tsx}",
+    "lint:check": "eslint --debug --ext .js,.jsx,.ts,.tsx ./src",
+    "lint:write": "eslint --fix --debug --ext .js,.jsx,.ts,.tsx ./src",
+    "fixless": "stylelint  src/**/*.{css,less} --fix",
+    "upload:cos": "tenone-cos-upload"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -e $GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,html,css,less,scss,md}": [
+      "prettier --write",
+      "prettier --check"
+    ],
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --cache --fix",
+      "eslint --debug"
+    ],
+    "src/**/*.{css,less}": [
+      "stylelint --fix"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "dependencies": {
+    "antd-mobile": "^2.3.4",
+    "axios": "^0.21.1",
+    "better-scroll": "^1.15.2",
+    "copy-to-clipboard": "3.3.1",
+    "crypto-js": "^4.0.0",
+    "html2canvas": "1.0.0-rc.4",
+    "md5": "^2.3.0",
+    "qrcode": "^1.4.4",
+    "rc-form": "^2.4.12",
+    "rc-form-hooks": "^0.0.1-beta.18",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-router-dom": "^5.2.0",
+    "sa-sdk-javascript": "^1.16.16",
+    "use-async-effect": "^2.2.3",
+    "vconsole": "^3.5.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@types/crypto-js": "^4.0.1",
+    "@types/history": "4.7.9",
+    "@types/md5": "^2.3.0",
+    "@types/node": "^15.3.0",
+    "@types/qrcode": "^1.4.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-router": "5.1.17",
+    "@types/react-router-dom": "^5.1.7",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "@vitejs/plugin-legacy": "1.4.3",
+    "@vitejs/plugin-react-refresh": "^1.3.1",
+    "commitizen": "^4.2.4",
+    "cos-nodejs-sdk-v5": "^2.9.15",
+    "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "dotenv": "^10.0.0",
+    "eslint": "^7.26.0",
+    "eslint-config-alloy": "^4.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "husky": "4.3.8",
+    "indexof": "^0.0.1",
+    "less": "^4.1.1",
+    "lint-staged": "10.5.4",
+    "node-dir": "^0.1.17",
+    "postcss-less": "6.0.0",
+    "prettier": "^2.3.0",
+    "stylelint": "14.3.0",
+    "stylelint-config-recess-order": "3.0.0",
+    "stylelint-config-standard": "24.0.0",
+    "stylelint-order": "5.0.0",
+    "typescript": "^4.2.4",
+    "vite": "^2.3.3",
+    "vite-plugin-eslint": "^1.2.0",
+    "vite-plugin-imp": "^2.0.7",
+    "yapi-to-typescript": "3.26.2"
+  }
+}

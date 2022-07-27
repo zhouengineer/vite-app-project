@@ -1,0 +1,59 @@
+{
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+
+  "files.eol": "\n",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[less]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
+  "css.validate": false,
+  "less.validate": false,
+  "stylelint.validate": ["css", "less"],
+  "cSpell.words": [
+    "Cust",
+    "Succ",
+    "Symbian",
+    "Unmount",
+    "WECHAT",
+    "agentid",
+    "antd",
+    "avator",
+    "bgcolor",
+    "btns",
+    "caizhi",
+    "cashtask",
+    "clickmap",
+    "cnltype",
+    "contenteditable",
+    "corpid",
+    "cust",
+    "echarts",
+    "invitor",
+    "micromessenger",
+    "miniapi",
+    "miniprogram",
+    "nocheck",
+    "noncestr",
+    "noreferrer",
+    "openid",
+    "qrcode",
+    "qywx",
+    "retdata",
+    "retmsg",
+    "snsapi",
+    "tenone",
+    "tenwit",
+    "userinfo",
+    "weapp",
+    "wxwork"
+  ]
+}

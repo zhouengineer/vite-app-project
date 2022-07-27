@@ -1,0 +1,30 @@
+image: node:lts
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+    - .yarn-cache/
+
+variables:
+  APP_NAME: 'admin-app'
+
+stages:
+  - format
+  - lint
+
+before_script:
+  - echo "before_script"
+  - node -v
+  - yarn -v
+  - yarn install --cache-folder .yarn-cache
+
+format:
+  stage: format
+  script:
+    - yarn format:check
+
+lint:
+  stage: lint
+  script:
+    - yarn lint:check

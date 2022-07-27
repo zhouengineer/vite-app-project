@@ -1,0 +1,50 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": ["alloy", "alloy/react", "alloy/typescript"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint"],
+  "rules": {
+    "no-new": 0, // 可以使用new 关键字
+    // "complexity": [0, 20], // 关闭代码复杂度校验
+    "no-unused-vars": 0,
+    "no-param-reassign": 0, // 允许修改传入方法的参数
+    "prefer-regex-literals": 0, // 正则字面量
+    "no-async-promise-executor": 0, // Promise执行器可以使用async
+    "no-promise-executor-return": 0, // Promise执行器可以使用return
+    "max-params": 0, // 函数允许最多传参个数,默认是3个
+    "no-return-assign": 0, // 允许return返回赋值语句
+    "guard-for-in": 0, // 用for-in遍历数组,要用Object.prototype.hasOwnProperty.call(foo, key)判断是否是自身属性
+    "react/prop-types": 0,
+    "react/display-name": 0,
+    "react/no-unescaped-entities": "off", // 要对html中文本中的>,',",}进行转义
+    "@typescript-eslint/member-ordering": 0, // class成员必须按照正确的顺序定义 signature  -> Methods -> Constructors -> Fields
+    "@typescript-eslint/no-inferrable-types": "off", // 关闭类型推断
+    "@typescript-eslint/explicit-member-accessibility": "off", // 需要在类属性和方法上使用显式可访问性修饰符
+    "@typescript-eslint/method-signature-style": "off", // 不允许使用简短的声明方法的书写方式
+    "@typescript-eslint/unified-signatures": "off", // 警告任何两个可以通过使用联合或可选/rest 参数统一为一个的重载。
+    "@typescript-eslint/prefer-optional-chain": "off" // 更喜欢使用简洁的可选链表达式而不是链式逻辑与
+  },
+  "globals": {
+    "SERVER": true,
+    "WeixinJSBridge": true,
+    "wx": true,
+    "qq": true,
+    "JSX": true,
+    "NSRouter": "readonly",
+    "ValueOf": "readonly",
+    "KeyOf": "readonly"
+  },
+  "settings": {
+    "react": {
+      "version": "detect" // 表示探测当前 node_modules 安装的 react 版本
+    }
+  }
+}

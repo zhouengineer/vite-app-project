@@ -1,0 +1,304 @@
+/* img {
+  width: 100%;
+} */
+
+/* 不要出现上面的标签全局class */
+body,
+html {
+  overflow: auto;
+  // height: 100%;
+  touch-action: pan-y;
+  background: #f5f5f5;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+// 隐藏滚动条
+*::-webkit-scrollbar {
+  display: none; /* Chrome Safari */
+}
+
+body {
+  font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+  font-size: 0.28rem;
+  color: #333;
+}
+// 解决IOS和安卓下，边框文字垂直居中问题
+.vertical-center-compatible {
+  font-family: -apple-system-font, sans-serif;
+}
+
+#root {
+  * {
+    box-sizing: border-box;
+  }
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+div,
+select,
+p,
+span {
+  user-select: none;
+}
+
+audio,
+video {
+  width: 100%;
+  margin: 0.1rem 0;
+}
+
+svg {
+  pointer-events: auto;
+  -moz-user-select: auto;
+  -webkit-user-select: auto;
+  -o-user-select: auto;
+  user-select: auto;
+  -webkit-touch-callout: auto;
+}
+
+// 消除图片未加载时的边框
+img[src=""],
+img:not([src]) {
+  border: 0;
+  opacity: 0;
+}
+
+#__vconsole {
+  position: relative;
+  z-index: 999999999;
+  display: none;
+}
+
+#__vconsole .vc-switch {
+  bottom: 1rem;
+  z-index: 999999999;
+}
+
+#__vconsole .vc-mask,
+#__vconsole .vc-panel,
+#__vconsole .vc-toolbar {
+  z-index: 99999999;
+  transform: none !important;
+}
+
+.iphone-x {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+@font-face {
+  font-family: "DIN Alternate Bold";
+  src: url("https://webcdn.tengmoney.com/assets/font/DIN%20Alternate%20Bold-subfont.ttf") format("truetype");
+  src: url("../lib/DIN Alternate Bold-subfont.ttf") format("truetype");
+}
+
+.ding-number {
+  font-family: "DIN Alternate Bold";
+}
+// 普通的tooltip
+.tooltip {
+  line-height: 0.36rem;
+  padding: 0.2rem;
+  font-size: 0.22rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 4px;
+}
+// 固定图表顶部的占100%宽度的tooltip
+.tooltip-full {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 7.1rem;
+  width: calc(100vw - 0.4rem);
+  line-height: 0.4rem;
+  padding: 0.24rem 0.1rem;
+  margin: 0 0.2rem;
+  font-size: 0.22rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 4px;
+
+  .tooltip-item {
+    flex: 1;
+    text-align: center;
+
+    &:first-child {
+      border-right: 1px solid #fff;
+    }
+  }
+}
+
+::-webkit-input-placeholder {
+  color: #c8c8c8;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 文字超出两行省略号 */
+.text-ellipsis-line-2 {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.text-ellipsis-line-3 {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.text-ellipsis-line-5 {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+/* 1像素 */
+.one-px {
+  position: relative;
+}
+
+.one-px::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.03rem;
+  content: "";
+  background-color: #e6e6e6;
+  transform: scaleY(0.5);
+}
+
+.px-1 (@color: #ebebeb) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  content: "";
+  background: @color;
+  transform: scaleY(0.5);
+}
+
+/* 公共flex */
+.flex-align {
+  display: flex;
+  align-items: center;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.flex-auto {
+  flex: auto;
+}
+
+.flex-none {
+  flex: none;
+}
+
+/* 重置line-height */
+
+.normal {
+  line-height: normal;
+}
+
+// antd modal确认框样式调整
+.am-modal.am-modal-transparent {
+  box-sizing: border-box;
+  width: 6rem;
+  padding: 0.22rem 0.5rem 0.55rem;
+  text-align: center;
+  background: #fff;
+  border-radius: 0.16rem;
+
+  .am-modal-content {
+    padding: 0;
+    border-radius: 0;
+
+    .am-modal-header {
+      padding: 0;
+    }
+
+    .am-modal-title {
+      line-height: 0.5rem;
+      font-size: 0.36rem;
+      font-weight: 600;
+      color: rgba(17, 17, 17, 1);
+    }
+
+    .am-modal-body {
+      line-height: 0.45rem;
+      // margin: 0.6rem 0 0.66rem;
+      // padding: 0 0.5rem;
+      margin: 0.2rem 0;
+      font-size: 0.32rem;
+      color: rgba(17, 17, 17, 1);
+    }
+
+    .am-modal-footer {
+      .am-modal-button-group-h::before {
+        display: none;
+      }
+
+      .am-modal-button {
+        height: auto;
+        line-height: 0.76rem;
+        font-size: 0.32rem;
+        color: #07c160;
+        background: #f2f2f2;
+        border-radius: 0.08rem;
+
+        &:not(:first-child) {
+          margin-left: 0.2rem;
+          color: #fff;
+          background: #07c160;
+        }
+      }
+    }
+  }
+}
+
+.am-toast > span {
+  max-width: 70%;
+}
+
+pre {
+  word-break: break-word;
+  white-space: pre-line;
+}

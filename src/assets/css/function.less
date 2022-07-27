@@ -1,0 +1,19 @@
+.rem(@name,@px) {
+  @{name}: unit(@px / 100, rem);
+}
+
+.rem2(@name,@px,@px2) {
+  @{name}: unit(@px / 100, rem) unit(@px2 / 100, rem);
+}
+.boxshadow(@x,@y,@blur,@spread,@color) {
+  box-shadow: unit(@x / 100, rem) unit(@y / 100, rem) unit(@blur / 100, rem) unit(@spread / 100, rem) @color;
+}
+
+.border(@w,@style:solid,@color) {
+  border: unit(@w / 100, rem) @style @color;
+}
+
+// 左上，右上，右下，左下
+.bdRadius(@lt,@rt,@rb,@lb) {
+  border-radius: unit(@lt / 100, rem) unit(@rt / 100, rem) unit(@rb / 100, rem) unit(@lb / 100, rem);
+}
